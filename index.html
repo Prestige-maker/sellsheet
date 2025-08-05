@@ -194,7 +194,29 @@
             border-bottom: 1px solid rgba(201, 170, 124, 0.3);
         }
 
-        @media (max-width: 768px) {
+        .clickable-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clickable-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(201, 170, 124, 0.3);
+            border-color: rgba(201, 170, 124, 0.5);
+        }
+
+        .view-gallery {
+            font-size: 0.9rem;
+            color: #c9aa7c;
+            font-weight: normal;
+            margin-left: 10px;
+            opacity: 0.8;
+        }
+
+        .clickable-card:hover .view-gallery {
+            opacity: 1;
+            color: #f4e4bc;
+        }
             .header h1 {
                 font-size: 2.5rem;
             }
@@ -220,9 +242,9 @@
         <div class="section">
             <h2 class="section-title">Premium Composite Decking Collection</h2>
             <div class="grid">
-                <div class="card highlight">
+                <div class="card highlight clickable-card" onclick="window.open('https://example.com/voyage-gallery', '_blank')">
                     <div class="premium-badge">Surestone®</div>
-                    <h3>Voyage™ Mineral-Based Composite</h3>
+                    <h3>Voyage™ Mineral-Based Composite <span class="view-gallery">📸 View Gallery</span></h3>
                     <div class="option">
                         <div class="option-name">Costa, Tundra, Mesa</div>
                         <div class="option-desc">Premium mineral-based composite in 3.5", 5.5", 7.25" & 9.25" widths</div>
@@ -325,9 +347,9 @@
         <div class="section">
             <h2 class="section-title">Premium Railing Systems</h2>
             <div class="grid">
-                <div class="card highlight">
+                <div class="card highlight clickable-card" onclick="window.open('https://photos.app.goo.gl/VT1pPCSpySn2ikEw7', '_blank')">
                     <div class="premium-badge">Contemporary</div>
-                    <h3>Aluminum Contemporary Railing</h3>
+                    <h3>Aluminum Contemporary Railing <span class="view-gallery">📸 View Gallery</span></h3>
                     <div class="option">
                         <div class="option-name">Rectangle Balusters</div>
                         <div class="option-desc">Pre-welded sections in 6' and 8' lengths with modern aesthetic</div>
@@ -339,22 +361,6 @@
                     <div class="option">
                         <div class="option-name">Glass Panel System</div>
                         <div class="option-desc">Tempered glass panels for unobstructed views</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Aluminum Rapid Rail System</h3>
-                    <div class="option">
-                        <div class="option-name">36" & 42" Heights</div>
-                        <div class="option-desc">Square balusters with textured black finish</div>
-                    </div>
-                    <div class="option">
-                        <div class="option-name">Line & Stair Brackets</div>
-                        <div class="option-desc">Complete hardware for horizontal and stair installations</div>
-                    </div>
-                    <div class="option">
-                        <div class="option-name">Gate Conversion Kits</div>
-                        <div class="option-desc">Convert panels into functional deck gates</div>
                     </div>
                 </div>
 
