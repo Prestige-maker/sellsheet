@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Renovation - Premium Outdoor Living Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #c9aa7c, #f4e4bc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            font-style: italic;
+            opacity: 0.9;
+            color: #f4e4bc;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(45deg, #c9aa7c, #f4e4bc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #c9aa7c, #f4e4bc);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(201, 170, 124, 0.2);
+            border-color: rgba(201, 170, 124, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c9aa7c, #f4e4bc);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #f4e4bc;
+            font-weight: 400;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #c9aa7c;
+            transition: all 0.2s ease;
+        }
+
+        .option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .option-name {
+            font-weight: 600;
+            color: #f4e4bc;
+            margin-bottom: 5px;
+        }
+
+        .option-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #c9aa7c, #f4e4bc);
+            color: #1a1a1a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(201, 170, 124, 0.2), rgba(244, 228, 188, 0.1));
+            border: 2px solid rgba(201, 170, 124, 0.3);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(201, 170, 124, 0.1), rgba(244, 228, 188, 0.05));
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #c9aa7c, #f4e4bc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .luxury-note {
+            font-style: italic;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding: 20px;
+            border-top: 1px solid rgba(201, 170, 124, 0.3);
+            border-bottom: 1px solid rgba(201, 170, 124, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Prestige Renovation</h1>
+            <p>Outdoor Living: Turning Visions Into Reality</p>
+        </div>
+
+        <!-- Composite Decking Section -->
+        <div class="section">
+            <h2 class="section-title">Premium Composite Decking Collection</h2>
+            <div class="grid">
+                <div class="card highlight">
+                    <div class="premium-badge">Surestone®</div>
+                    <h3>Voyage™ Mineral-Based Composite</h3>
+                    <div class="option">
+                        <div class="option-name">Costa, Tundra, Mesa</div>
+                        <div class="option-desc">Premium mineral-based composite in 3.5", 5.5", 7.25" & 9.25" widths</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Sierra, Khaya, Sedona</div>
+                        <div class="option-desc">Enhanced durability with authentic wood grain patterns</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">11.25" Stair Treads Available</div>
+                        <div class="option-desc">Matching stair treads for complete system integration</div>
+                    </div>
+                </div>
+
+                <div class="card highlight">
+                    <div class="premium-badge">Limited</div>
+                    <h3>Summit™ Mineral-Based Composite</h3>
+                    <div class="option">
+                        <div class="option-name">Cliffside, Boulder Brown, Glacier</div>
+                        <div class="option-desc">Premium Surestone® mineral composite with superior durability</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Grooved & Solid Profiles</div>
+                        <div class="option-desc">Available in 16' and 20' lengths for fewer seams</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Matching Fascia</div>
+                        <div class="option-desc">7/8" x 5.5" coordinated fascia boards</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Vault™ Collection - Sunset Item</h3>
+                    <div class="option">
+                        <div class="option-name">Dusk & Mesquite</div>
+                        <div class="option-desc">Rich, sophisticated colors in Surestone® mineral composite</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Grooved & Solid Options</div>
+                        <div class="option-desc">7/8" x 5.5" boards in 12', 16', and 20' lengths</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Complete Trim System</div>
+                        <div class="option-desc">Matching fascia, stair risers, and White fascia option</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Vista Enhanced™ Collection</h3>
+                    <div class="option">
+                        <div class="option-name">Driftwood & Silverwood</div>
+                        <div class="option-desc">Capped on three sides with natural weathered appearance</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Ironwood & Dunewood</div>
+                        <div class="option-desc">Rich color depth with enhanced stain resistance</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Matching Fascia & Risers</div>
+                        <div class="option-desc">Complete system for seamless design integration</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Venture™ Collection</h3>
+                    <div class="option">
+                        <div class="option-name">Sandbar & Saltwater</div>
+                        <div class="option-desc">Cavity-back design for enhanced performance</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Grooved & Solid Options</div>
+                        <div class="option-desc">Hidden fastener compatible grooved or face-screw solid</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Matching Fascia & Drill Template</div>
+                        <div class="option-desc">Complete installation system with precision tools</div>
+                    </div>
+                </div>
+
+                <div class="card highlight">
+                    <div class="premium-badge">Designer</div>
+                    <h3>Picture Frame Dark Slate</h3>
+                    <div class="option">
+                        <div class="option-name">Border Decking System</div>
+                        <div class="option-desc">3.5", 5.5", 7.25" boards in 21' lengths for premium borders</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Grooved & Solid Profiles</div>
+                        <div class="option-desc">Versatile installation options for creative patterns</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Complete Trim System</div>
+                        <div class="option-desc">Matching 8" risers, 12" fascia, and 11.25" stair treads</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Railing Systems Section -->
+        <div class="section">
+            <h2 class="section-title">Premium Railing Systems</h2>
+            <div class="grid">
+                <div class="card highlight">
+                    <div class="premium-badge">Contemporary</div>
+                    <h3>Aluminum Contemporary Railing</h3>
+                    <div class="option">
+                        <div class="option-name">Rectangle Balusters</div>
+                        <div class="option-desc">Pre-welded sections in 6' and 8' lengths with modern aesthetic</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Cable Rail System</div>
+                        <div class="option-desc">Stainless steel cables with color-changing LED options</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Glass Panel System</div>
+                        <div class="option-desc">Tempered glass panels for unobstructed views</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Aluminum Rapid Rail System</h3>
+                    <div class="option">
+                        <div class="option-name">36" & 42" Heights</div>
+                        <div class="option-desc">Square balusters with textured black finish</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Line & Stair Brackets</div>
+                        <div class="option-desc">Complete hardware for horizontal and stair installations</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Gate Conversion Kits</div>
+                        <div class="option-desc">Convert panels into functional deck gates</div>
+                    </div>
+                </div>
+
+                <div class="card highlight">
+                    <div class="premium-badge">Glass</div>
+                    <h3>Tempered Glass Railing</h3>
+                    <div class="option">
+                        <div class="option-name">Frameless Glass Panels</div>
+                        <div class="option-desc">Unobstructed views with structural glass design</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Aluminum Frame System</div>
+                        <div class="option-desc">Powder-coated aluminum frame with glass inserts</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Privacy Glass Options</div>
+                        <div class="option-desc">Frosted and tinted glass for enhanced privacy</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Composite Railing Systems</h3>
+                    <div class="option">
+                        <div class="option-name">White Composite Rails</div>
+                        <div class="option-desc">Low-maintenance composite with aluminum balusters</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Structural Post Kits</div>
+                        <div class="option-desc">Trim-locking sleeves with welded mounting plates</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Gate Conversion Kits</div>
+                        <div class="option-desc">Complete hardware for deck gate applications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lattice & Privacy Solutions -->
+        <div class="section">
+            <h2 class="section-title">Privacy & Screening Solutions</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Deckorators Lattice Panels</h3>
+                    <div class="option">
+                        <div class="option-name">Privacy Lattice</div>
+                        <div class="option-desc">Tighter weave 4'x8' panels in 8 colors including White, Black, Cedar</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Classic & Square Lattice</div>
+                        <div class="option-desc">Traditional diagonal and square patterns with matching trim</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Lattice Caps & Dividers</div>
+                        <div class="option-desc">Professional finishing accessories in coordinating colors</div>
+                    </div>
+                </div>
+
+                <div class="card highlight">
+                    <div class="premium-badge">RDI</div>
+                    <h3>Privacy Rail™ System</h3>
+                    <div class="option">
+                        <div class="option-name">ClickConnect™ Vinyl Boards</div>
+                        <div class="option-desc">Interlocking boards in White, Sand, Clay, Slate Gray, Coastal Cedar</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Decorative Screen Panels</div>
+                        <div class="option-desc">3'x6' panels in Boardwalk, Sanibel, River Rock, Optic patterns</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Aluminum Framework</div>
+                        <div class="option-desc">Powder-coated frames in Matte Black and White finishes</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Privacy Screen Kits</h3>
+                    <div class="option">
+                        <div class="option-name">4'x6' Frame Kits</div>
+                        <div class="option-desc">Complete system with brackets and connector strips</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">HDPE Infill Panels</div>
+                        <div class="option-desc">Palm Black, Wicker Black, Pier Black, Wildwood patterns</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">WPC Board Slats</div>
+                        <div class="option-desc">5/8" x 5.5" reversible boards in Gray, Brown, Slate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lighting Solutions -->
+        <div class="section">
+            <h2 class="section-title">Outdoor Lighting Systems</h2>
+            <div class="grid">
+                <div class="card highlight">
+                    <div class="premium-badge">Tru-Scapes®</div>
+                    <h3>Landscape & Path Lighting</h3>
+                    <div class="option">
+                        <div class="option-name">Solid Brass Fixtures</div>
+                        <div class="option-desc">Traditional, Modern, and Classic path lights with color-changing capability</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Accent & Uplights</div>
+                        <div class="option-desc">Wall wash, high power accent, and in-ground well lights</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Color Control System</div>
+                        <div class="option-desc">App-based Bluetooth RGBCW control with dimming and zones</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Hardscape Lighting</h3>
+                    <div class="option">
+                        <div class="option-name">Step Riser Lights</div>
+                        <div class="option-desc">3" and 6" LED fixtures with color-changing options</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Dot Lights</div>
+                        <div class="option-desc">1.5" and 2.5" recessed lights with replaceable trim rings</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Pillar & Post Cap Lights</div>
+                        <div class="option-desc">Traditional and Noble designs with integrated LED sources</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Specialized Applications</h3>
+                    <div class="option">
+                        <div class="option-name">Concrete Lighting</div>
+                        <div class="option-desc">Patent-pending system for driveways, patios, and walls</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Structure Lighting</div>
+                        <div class="option-desc">Wall sconces, pendant lights, and bistro string systems</div>
+                    </div>
+                    <div class="option">
+                        <div class="option-name">Smart Controls</div>
+                        <div class="option-desc">WiFi transformers with dual-zone control and app integration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="luxury-note">
+            "Every element is carefully curated from leading manufacturers including Deckorators, RDI Privacy Rail, and Tru-Scapes lighting systems. 
+            Our premium materials and expert installation ensure your investment delivers lasting beauty and unmatched performance."
+        </div>
+
+        <div class="cta-section">
+            <h2>Create Your Dream Outdoor Space</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Let our design experts at Prestige Renovation help you select the perfect combination of materials and features for your unique vision.</p>
+            <div style="margin: 30px 0; padding: 20px; background: rgba(201, 170, 124, 0.1); border-radius: 15px; border: 1px solid rgba(201, 170, 124, 0.3);">
+                <h3 style="color: #f4e4bc; margin-bottom: 15px; font-size: 1.5rem;">Contact Prestige Renovation</h3>
+                <p style="font-size: 1.3rem; margin-bottom: 10px;"><strong>Phone:</strong> <a href="tel:856-492-6375" style="color: #f4e4bc; text-decoration: none;">856-492-6375</a></p>
+                <p style="font-size: 1.3rem;"><strong>Website:</strong> <a href="https://info.prestigerenovationllc.com" target="_blank" style="color: #f4e4bc; text-decoration: none;">info.prestigerenovationllc.com</a></p>
+            </div>
+            <p style="opacity: 0.9;">Contact us today for a personalized consultation and exclusive pricing on our premium outdoor living collection.</p>
+        </div>
+    </div>
+</body>
+</html>
